@@ -27,13 +27,13 @@ namespace array_dotnet
            
             char[] letters = new char[8];
             letters[0] = 'a';
-            letters[1] = 'd';
+            letters[1] = 'e';
             letters[2] = 'p';
             letters[3] = 'o';
             letters[4] = 'g';
             letters[5] = 'f';
             letters[6] = 'x';
-            letters[7] = 'e';
+            letters[7] = 'd';
 
              Console.WriteLine(containsString(letters, "doge"));
             // charList.Add("aaaa");
