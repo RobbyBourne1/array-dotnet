@@ -33,7 +33,7 @@ namespace array_dotnet
             letters[4] = 'g';
             letters[5] = 'f';
             letters[6] = 'x';
-            letters[7] = 'y';
+            letters[7] = 'e';
 
              Console.WriteLine(containsString(letters, "doge"));
             // charList.Add("aaaa");
@@ -84,24 +84,10 @@ namespace array_dotnet
 
         public static bool containsString(char[] letters, string word)
         {
-          char[] delimiterChars = word.ToCharArray();
 
-           var letterCount = 0;
-           foreach (var l in delimiterChars)
-           {
-               if (letters.Contains(l))
-               {
-                  letterCount++; 
-               }
-           }
-           if (letterCount == word.Length)
-           {
-               return true;
-           }
-           else
-           {
-               return false;
-           }
+        var letterCount = word.Where(l => letters.Contains(l)).Count();
+        return letterCount == word.Length;
+
         }
 
     }
