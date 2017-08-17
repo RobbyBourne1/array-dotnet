@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace array_dotnet
 {
@@ -19,7 +20,25 @@ namespace array_dotnet
             firstNumlist.Add(3);
             var  myArray = firstNumlist.ToArray();
             Console.WriteLine(countMults(myArray, 2));
+
+            // Second
             Console.WriteLine(hasThreNonAdjacentThrees(myArray));
+
+           
+            char[] letters = new char[8];
+            letters[0] = 'a';
+            letters[1] = 'd';
+            letters[2] = 'p';
+            letters[3] = 'o';
+            letters[4] = 'g';
+            letters[5] = 'f';
+            letters[6] = 'x';
+            letters[7] = 'y';
+
+             Console.WriteLine(containsString(letters, "doge"));
+            // charList.Add("aaaa");
+            // var myChars = charList.ToArray();
+            // Console.WriteLine(containsString(myChars, word))
         }
 
         public static int countMults(int[] nums, int divisibility)
@@ -65,7 +84,24 @@ namespace array_dotnet
 
         public static bool containsString(char[] letters, string word)
         {
-            return true;
+          char[] delimiterChars = word.ToCharArray();
+
+           var letterCount = 0;
+           foreach (var l in delimiterChars)
+           {
+               if (letters.Contains(l))
+               {
+                  letterCount++; 
+               }
+           }
+           if (letterCount == word.Length)
+           {
+               return true;
+           }
+           else
+           {
+               return false;
+           }
         }
 
     }
